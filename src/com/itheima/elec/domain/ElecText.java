@@ -34,6 +34,11 @@ public class ElecText implements Serializable{
 	public void setTextRemark(String textRemark) {
 		this.textRemark = textRemark;
 	}
+	@Override
+	public String toString() {
+		return "ElecText [textID=" + textID + ", textName=" + textName
+				+ ", textDate=" + textDate + ", textRemark=" + textRemark + "]";
+	}
 
 	
 
