@@ -40,6 +40,4 @@ public class ElecText implements Serializable{
 				+ ", textDate=" + textDate + ", textRemark=" + textRemark + "]";
 	}
 
-	
-
 }

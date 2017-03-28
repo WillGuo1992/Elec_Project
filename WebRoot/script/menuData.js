@@ -130,7 +130,7 @@ var privilegeDate = [{
 			name:'运行监控',
 			icon:'../images/MenuIcon/daibanshiyi.gif',
 			target:'mainFrame',
-			url:'../system/actingIndex.jsp',
+			url:'../system/elecCommonMsgAction_home.do',
 			isParent:false
 		},{
 			mid:'aq',
@@ -138,7 +138,7 @@ var privilegeDate = [{
 			name:'数据字典维护',
 			icon:'../images/MenuIcon/shujuzidianguanli.gif',
 			target:'mainFrame',
-			url:'../system/dictionaryIndex.jsp',
+			url:'../system/elecSystemDDLAction_dictionaryIndex.do',
 			isParent:false
 		}
 	]

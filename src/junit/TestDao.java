@@ -9,7 +9,9 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.itheima.elec.dao.IElecCommonMsgDao;
 import com.itheima.elec.dao.IElecTextDao;
+import com.itheima.elec.domain.ElecCommonMsg;
 import com.itheima.elec.domain.ElecText;
 
 public class TestDao {
@@ -18,6 +20,7 @@ public class TestDao {
  */
 	@Test
 	public void save(){
+		
 		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
 		IElecTextDao elecTextDao = (IElecTextDao) ac.getBean(IElecTextDao.SERVICE_NAME);
 		
@@ -26,6 +29,18 @@ public class TestDao {
 		et.setTextDate(new Date());
 		et.setTextRemark("Dao Remark");
 		elecTextDao.save(et);
+	}
+	
+	@Test
+	public void save2ElecCommonMsg(){
+		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+		IElecCommonMsgDao commonMsgDao = (IElecCommonMsgDao) ac.getBean(IElecCommonMsgDao.SERVICE_NAME);
+		
+		ElecCommonMsg commonMsg = new ElecCommonMsg();
+		commonMsg.setStationRun("hello");
+		commonMsg.setDevRun("world");
+		commonMsg.setCreateDate(new Date());
+		commonMsgDao.save(commonMsg);
 	}
 /**
  * 更新
@@ -91,7 +106,6 @@ public class TestDao {
 		list.add(elecText1);
 		list.add(elecText2);
 		list.add(elecText3);
-		
 		
 		elecTextDao.deleteObjectByCollection(list);
 	}

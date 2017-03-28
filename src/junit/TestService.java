@@ -7,7 +7,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.itheima.elec.dao.IElecTextDao;
+import com.itheima.elec.domain.ElecCommonMsg;
 import com.itheima.elec.domain.ElecText;
+import com.itheima.elec.service.IElecCommonMsgService;
 import com.itheima.elec.service.IElecTextService;
 
 public class TestService {
@@ -24,5 +26,16 @@ public class TestService {
 		et.setTextDate(new Date());
 		et.setTextRemark("service Remark");
 		elecTextService.saveElecText(et);
+	}
+	@Test
+	public void save2(){
+		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+		IElecCommonMsgService commonMsgService = (IElecCommonMsgService) ac.getBean(IElecCommonMsgService.SERVICE_NAME);
+		
+		ElecCommonMsg commonMsg = new ElecCommonMsg();
+		commonMsg.setStationRun("hello2");
+		commonMsg.setDevRun("world2");
+		commonMsg.setCreateDate(new Date());
+		commonMsgService.saveElecCommonMsg(commonMsg);
 	}
 }

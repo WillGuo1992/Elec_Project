@@ -17,6 +17,7 @@
 		<property name="hibernate.show_sql">true</property>
 		<!-- 添加映射 -->
 		<mapping resource="com/itheima/elec/domain/ElecText.hbm.xml"/>
-		
+		<mapping resource="com/itheima/elec/domain/ElecCommonMsg.hbm.xml"/>
+		<mapping resource="com/itheima/elec/domain/ElecSystemDDL.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>

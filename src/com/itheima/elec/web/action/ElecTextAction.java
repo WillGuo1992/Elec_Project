@@ -18,10 +18,9 @@ public class ElecTextAction extends BaseAction<ElecText>{
 	@Resource(name=IElecTextService.SERVICE_NAME)
 	IElecTextService elecTextService;
 	
-	public String save(){
+	public String menuHome(){
 		elecTextService.saveElecText(elecText);
 		return "save";
 	}
 	
-
 }
